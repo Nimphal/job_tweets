@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Job announcements on Twitter are ephemeral. This app allows the discovering and basic filtering of tweets that contain job postings.
 
-Things you may want to cover:
+TODO 
 
-* Ruby version
+Running instructions
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Environment variables
