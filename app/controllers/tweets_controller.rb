@@ -2,10 +2,11 @@ class TweetsController < ActionController::Base
 	layout 'application'
 
 	def tweets
-		render "tweets"
+		@tweets_list = params[:results]
 	end
 
 	def search
-		redirect_to action: 'tweets'
+		results=[{title: params[:search][:q]}, {title: "tweet2"}]
+		redirect_to action: 'tweets', results: results
 	end
 end
