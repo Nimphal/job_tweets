@@ -3,4 +3,7 @@ h1 Tweets
 .container
 	= @results.each do |tweet|		
 		p
-			== tweet[:title]
+			== tweet.text
+
+		a href=(tweet.uri)
+			== tweet.uri
