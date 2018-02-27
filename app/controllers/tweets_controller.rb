@@ -8,8 +8,6 @@ class TweetsController < ActionController::Base
 		rescue
 			@results=[]
 		end
-		puts "these are the results"
-		puts @results
 		render "tweets"
 	end	
 end
