@@ -15,6 +15,5 @@ class TweetsControllerTest < ActionDispatch::IntegrationTest
 	    assert_select "p", "This is a test tweet"
 	    assert_select "a", "example.com"
 	  end
-
   end
 end

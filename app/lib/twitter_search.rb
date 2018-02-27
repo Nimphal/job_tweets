@@ -10,10 +10,12 @@ class TwitterSearch
 		end
 	end
 
-	def search(query)
+	def search(query, location="")
 		begin
-			results = client.search("#{query}", result_type: "recent").take(3).collect
-		rescue
+			results = client.search("#{query}", result_type: "recent", geocode: location).take(3).collect
+		rescue Exception => e
+			puts "There was an error"
+			puts e
 			results = []
 		end
 	end

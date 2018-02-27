@@ -66,3 +66,4 @@ gem 'slim'
 gem 'slim-rails'
 
 gem 'twitter'
+gem 'geocoder'
