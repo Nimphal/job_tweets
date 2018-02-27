@@ -2,12 +2,7 @@ class TweetsController < ActionController::Base
 	layout 'application'
 	
 	def search
-		search_term = params[:q]
-		begin
-			@results = TwitterSearch.new.search(search_term)						
-		rescue
-			@results=[]
-		end
+		@results = TwitterSearch.new.search(params[:q])	
 		render "tweets"
 	end	
 end

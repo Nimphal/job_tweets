@@ -11,6 +11,10 @@ class TwitterSearch
 	end
 
 	def search(query)
-		results = client.search("#{query}", result_type: "recent").take(3).collect
+		begin
+			results = client.search("#{query}", result_type: "recent").take(3).collect
+		rescue
+			results = []
+		end
 	end
 end
