@@ -7,7 +7,7 @@ class TweetsControllerTest < ActionDispatch::IntegrationTest
   	test_tweet = Tweet.new("This is a test tweet", "example.com")
 
   	twitter_search_stub = MiniTest::Mock.new
-  	twitter_search_stub.expect :search, [test_tweet], ["testquery"]
+  	twitter_search_stub.expect :search, [test_tweet], ["testquery", {latitude: nil, longitude: nil, radius: ""}]
 
     TwitterSearch.stub :new, twitter_search_stub do
 	    get "/tweets/search", params: {q: "testquery"}

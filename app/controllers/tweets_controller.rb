@@ -2,14 +2,12 @@ class TweetsController < ActionController::Base
 	layout 'application'
 	
 	def search
-		# TODO don't accept the request location if latitude and longitude are 0.0
-		# latitude = request.location.latitude || "51.4882023"
-		# longitude = request.location.longitude || "-3.1638941"
+		#FIXME this is brittle
+		latitude = request.location.latitude unless request.location.latitude == 0.0
+		longitude = request.location.longitude unless request.location.longitude == 0.0
+		radius = ""
 
-		latitude = "51.4787817"
-		longitude = "-3.1785712"
-		radius = "10mi"
-		@results = TwitterSearch.new.search(params[:q], location="#{latitude},#{longitude},#{radius}")	
+		@results = TwitterSearch.new.search(params[:q], {latitude: latitude, longitude: longitude, radius: radius})	
 		render "tweets"
 	end	
 end
